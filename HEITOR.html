@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Aniversario Heitor</title>
+</head>
+
+<style>
+    body {
+        background-color: #01abf0;
+        color: #fecb00;
+        font-size: 20px;
+        font-family: Helvetica, sans-serif;
+    }
+
+    h1 {
+        text-shadow: 0 3px #1d201e;
+        text-align: center;
+    }
+
+    .foto {
+        width: 300px;
+        height: auto;
+        margin: 10px;
+    }
+
+    .foto-container {
+        text-align: center;
+        padding: 30px;
+    }
+
+    .download-link {
+        display: block;
+        color: #fff;
+        background-color: #fecb00;
+        padding: 5px;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+    .download-link:hover {
+        background-color: #555;
+    }
+
+    .galeria-de-fotos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+</style>
+
+<body>
+    <h1>Fotos Aniversario Heitor</h1>
+
+    <div class="galeria-de-fotos" id="galeria-de-fotos">
+    </div>
+
+    <script>
+        const nomesFotos = [
+            "IMG (1).jpg", "IMG (2).jpg", "IMG (3).jpg", "IMG (4).jpg", "IMG (5).jpg", "IMG (6).jpg", "IMG (7).jpg", "IMG (8).jpg", "IMG (9).jpg", "IMG (10).jpg",
+            "IMG (11).jpg", "IMG (12).jpg", "IMG (13).jpg", "IMG (14).jpg", "IMG (15).jpg", "IMG (16).jpg", "IMG (17).jpg", "IMG (18).jpg", "IMG (19).jpg", "IMG (20).jpg",
+            "IMG (21).jpg", "IMG (22).jpg", "IMG (23).jpg", "IMG (24).jpg", "IMG (25).jpg", "IMG (26).jpg", "IMG (27).jpg", "IMG (28).jpg", "IMG (29).jpg", "IMG (30).jpg",
+            "IMG (31).jpg", "IMG (32).jpg", "IMG (33).jpg", "IMG (34).jpg", "IMG (35).jpg", "IMG (36).jpg", "IMG (37).jpg", "IMG (38).jpg", "IMG (39).jpg", "IMG (40).jpg",
+            "IMG (41).jpg", "IMG (42).jpg", "IMG (43).jpg", "IMG (44).jpg", "IMG (45).jpg", "IMG (46).jpg", "IMG (47).jpg", "IMG (48).jpg", "IMG (49).jpg", "IMG (50).jpg",
+            "IMG (51).jpg", "IMG (52).jpg", "IMG (53).jpg", "IMG (54).jpg", "IMG (55).jpg", "IMG (56).jpg", "IMG (57).jpg", "IMG (58).jpg", "IMG (59).jpg", "IMG (60).jpg",
+            "IMG (61).jpg", "IMG (62).jpg", "IMG (63).jpg", "IMG (64).jpg", "IMG (65).jpg", "IMG (66).jpg", "IMG (67).jpg", "IMG (68).jpg", "IMG (69).jpg", "IMG (70).jpg",
+            "IMG (71).jpg", "IMG (72).jpg", "IMG (73).jpg", "IMG (74).jpg", "IMG (75).jpg", "IMG (76).jpg", "IMG (77).jpg", "IMG (78).jpg", "IMG (79).jpg", "IMG (80).jpg",
+            "IMG (81).jpg", "IMG (82).jpg", "IMG (83).jpg", "IMG (84).jpg", "IMG (85).jpg", "IMG (86).jpg", "IMG (87).jpg"
+        ];
+
+        const galeriaFotos = document.getElementById('galeria-de-fotos');
+
+        for (let i = 0; i < nomesFotos.length; i++) {
+            const fotoContainer = document.createElement('div');
+            fotoContainer.className = 'foto-container';
+
+            const img = document.createElement('img');
+            img.src = `https://github.com/Goguenblouts/ANIVERSARIO-HEITOR/raw/main/${nomesFotos[i]}`;
+            img.alt = `Foto ${i + 1}`;
+            img.className = 'foto';
+
+            const linkDownload = document.createElement('a');
+            linkDownload.href = `https://github.com/Goguenblouts/ANIVERSARIO-HEITOR/raw/main/${nomesFotos[i]}`;
+            linkDownload.textContent = `Download Foto`;
+            linkDownload.setAttribute('download', `Foto${i + 1}.jpg`);
+            linkDownload.className = 'download-link';
+
+            fotoContainer.appendChild(img);
+            fotoContainer.appendChild(linkDownload);
+
+            galeriaFotos.appendChild(fotoContainer);
+        }
+    </script>
+</body>
+</html>
